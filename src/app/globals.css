@@ -20,7 +20,73 @@
 }
 
 body {
-  background: var(--background);
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(0, 140, 255, 0.15), transparent),
+              radial-gradient(900px 500px at 90% 10%, rgba(255, 80, 80, 0.15), transparent),
+              radial-gradient(1000px 600px at 50% 80%, rgba(255, 160, 40, 0.12), transparent),
+              var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+/* Neon glow buttons */
+.btn-neon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #0a0a0a;
+  background: linear-gradient(135deg, #00b7ff, #ff3e3e 55%, #ff9a1f);
+  box-shadow: 0 0 12px rgba(0, 183, 255, 0.5), 0 0 24px rgba(255, 62, 62, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+.btn-neon:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 18px rgba(0, 183, 255, 0.65), 0 0 28px rgba(255, 62, 62, 0.5);
+  filter: brightness(1.05);
+}
+
+/* Cinematic dark gradient background helper */
+.bg-cinematic {
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.85) 35%, rgba(10, 10, 10, 0.9) 100%);
+}
+
+/* Card glass and glow */
+.glass-card {
+  backdrop-filter: saturate(140%) blur(8px);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.card-glow {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(0, 183, 255, 0.25);
+}
+
+/* Section heading accent underline */
+.section-title {
+  position: relative;
+}
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, #00b7ff, #ff3e3e 60%, #ff9a1f);
+  border-radius: 9999px;
+}
+
+/* Simple fade-in animation */
+.fade-in {
+  animation: fadeIn 0.6s ease both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
